@@ -2,40 +2,49 @@
 
 Micro-framework reactivo en Vanilla JS puro. Sin dependencias. Sin build step.
 
-## Inicio rápido
+## Uso en tu app
 
-```bash
-npx serve .
-# abre http://localhost:3000
+### Remoto
+```js
+import { html, defineComponent, mount } from 'https://raw.githubusercontent.com/braiidev/nano/refs/heads/main/packages/nano.min.js';
 ```
 
-## Estructura
-
-```
-nano/
-├── core/
-│   ├── index.js        ← barrel: importa todo desde aquí
-│   ├── component.js    ← html``, defineComponent, mount
-│   ├── state.js        ← signal, createStore, computed
-│   ├── vdom.js         ← diff (virtual DOM)
-│   ├── router.js       ← Router, navigate
-│   └── lifecycle.js    ← onMount, onVisible, onResize, onEvent
-├── app/
-│   ├── components/
-│   ├── pages/
-│   ├── styles.css
-│   └── main.js
-├── index.html
-├── jsconfig.json
-└── eslint.config.js
+### Git clone
+```git
+git clone https://github.com/braiidev/nano.git
 ```
 
-## API
+```js
+import { html, defineComponent, mount } from '../packages/core/index.js';
+import { signal, createStore }          from '../packages/core/index.js';
+import { Router, navigate }             from '../packages/core/index.js';
+import { onMount, onVisible }           from '../packages/core/index.js';
+```
+
+## API completa → ver `core/index.js`
+
+| Export | Módulo | Descripción |
+|--------|--------|-------------|
+| `html` | component | Tagged template → HTMLElement |
+| `defineComponent` | component | Registra un componente |
+| `mount` | component | Monta componente en el DOM |
+| `signal` | state | Estado atómico reactivo |
+| `createStore` | state | Estado estructurado reactivo |
+| `computed` | state | Valor derivado de signals |
+| `diff` | vdom | Diffing mínimo del DOM |
+| `Router` | router | Client-side router con basePath |
+| `navigate` | router | Navegar sin instancia del Router |
+| `onMount` | lifecycle | Callback al entrar al DOM |
+| `onVisible` | lifecycle | Callback al entrar al viewport |
+| `onResize` | lifecycle | Callback al cambiar tamaño |
+| `onEvent` | lifecycle | addEventListener con cleanup |
+| `storage` | storage | Wrapper sobre localStorage |
+
 
 ### Componentes
 
 ```js
-import { html, defineComponent, mount } from './core/index.js';
+import { html, defineComponent, mount } from './packages/core/index.js';
 
 export const Button = defineComponent('Button', ({ label, onClick }) => {
   const el = html`<button class="btn">${label}</button>`;
@@ -49,7 +58,7 @@ mount(Button, '#root');
 ### Estado reactivo
 
 ```js
-import { signal, createStore, computed } from './core/index.js';
+import { signal, createStore, computed } from './packages/core/index.js';
 
 // Signal — valor atómico
 const count = signal(0);
@@ -68,7 +77,7 @@ const double = computed(() => count.get() * 2, [count]);
 ### Virtual DOM diff
 
 ```js
-import { diff } from './core/index.js';
+import { diff } from './packages/core/index.js';
 
 store.subscribe(state => {
   const newTree = MyList(state.items);
@@ -80,7 +89,7 @@ store.subscribe(state => {
 ### Router
 
 ```js
-import { Router, navigate } from './core/index.js';
+import { Router, navigate } from './packages/core/index.js';
 
 new Router([
   { path: '/',         component: Home },
@@ -97,7 +106,7 @@ navigate('/dashboard');
 ### Ciclo de vida
 
 ```js
-import { onMount, onVisible, onResize, onEvent } from './core/index.js';
+import { onMount, onVisible, onResize, onEvent } from './packages/core/index.js';
 
 onMount(el, () => {
   const unsub = store.subscribe(render);

@@ -4,11 +4,21 @@ Micro-framework reactivo en Vanilla JS puro. Sin dependencias. Sin build step.
 
 ## Uso en tu app
 
+### Remoto
 ```js
-import { html, defineComponent, mount } from '../../nano/core/index.js';
-import { signal, createStore }          from '../../nano/core/index.js';
-import { Router, navigate }             from '../../nano/core/index.js';
-import { onMount, onVisible }           from '../../nano/core/index.js';
+import { html, defineComponent, mount } from 'https://raw.githubusercontent.com/braiidev/nano/refs/heads/main/packages/nano.min.js';
+```
+
+### Git clone
+```git
+git clone https://github.com/braiidev/nano.git
+```
+
+```js
+import { html, defineComponent, mount } from '../packages/core/index.js';
+import { signal, createStore }          from '../packages/core/index.js';
+import { Router, navigate }             from '../packages/core/index.js';
+import { onMount, onVisible }           from '../packages/core/index.js';
 ```
 
 ## API completa → ver `core/index.js`
