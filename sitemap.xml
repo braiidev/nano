@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SITEMAP — le dice a Google exactamente qué URLs existen en la SPA.
+  Cambiá "tu-usuario" y "tu-repo" por tus valores reales.
+  Subilo junto con el resto del sitio.
+  Luego registralo en Google Search Console:
+  https://search.google.com/search-console
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Página principal -->
+  <url>
+    <loc>https://tu-usuario.github.io/tu-repo/nano-site/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tu-usuario.github.io/tu-repo/nano-site/"/>
+  </url>
+
+  <!-- Demo: Contador -->
+  <url>
+    <loc>https://tu-usuario.github.io/tu-repo/nano-site/counter</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Demo: Signals -->
+  <url>
+    <loc>https://tu-usuario.github.io/tu-repo/nano-site/signals</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Demo: Tareas -->
+  <url>
+    <loc>https://tu-usuario.github.io/tu-repo/nano-site/todo</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Referencia API -->
+  <url>
+    <loc>https://tu-usuario.github.io/tu-repo/nano-site/about</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>

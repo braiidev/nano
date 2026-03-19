@@ -11,3 +11,4 @@ export { signal, createStore, computed }             from './state.js';
 export { diff }                                      from './vdom.js';
 export { Router, navigate, currentPath }             from './router.js';
 export { onMount, onVisible, onResize, onEvent }     from './lifecycle.js';
+export { storage }                                   from './storage.js';

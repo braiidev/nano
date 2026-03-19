@@ -3,11 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nano App</title>
+
+  <!-- ── SEO ──────────────────────────────────────── -->
+  <title>nano — micro-framework reactivo en Vanilla JS puro</title>
+  <meta name="description" content="nano es un micro-framework JavaScript de 6.9 KB sin dependencias. Signals reactivos, componentes, Virtual DOM, Router y ciclo de vida. Sin npm, sin build step, solo ES Modules nativos.">
+  <meta name="keywords" content="vanilla js framework, micro framework javascript, signals javascript, virtual dom, router vanilla js, ES modules, nano framework">
+  <meta name="author" content="nano">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="Spanish">
+  <link rel="canonical" href="https://braiidev.github.io/nano/">
+
+  <!-- ── Open Graph ───────────────────────────────── -->
+  <meta property="og:type"         content="website">
+  <meta property="og:url"          content="https://braiidev.github.io/nano/">
+  <meta property="og:title"        content="nano — micro-framework reactivo en Vanilla JS puro">
+  <meta property="og:description"  content="6.9 KB. Sin dependencias. Sin build step. Signals, componentes, Virtual DOM y Router en un solo módulo ES nativo.">
+  <meta property="og:image"        content="https://braiidev.github.io/nano/og-image.svg">
+  <meta property="og:locale"       content="es_AR">
+  <meta property="og:site_name"    content="nano">
+
+  <!-- ── Twitter ──────────────────────────────────── -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="nano — micro-framework reactivo en Vanilla JS puro">
+  <meta name="twitter:description" content="6.9 KB. Sin dependencias. Sin build step.">
+  <meta name="twitter:image"       content="https://braiidev.github.io/nano/og-image.svg">
+
+  <!-- ── JSON-LD ──────────────────────────────────── -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"nano",
+  "description":"Micro-framework reactivo en Vanilla JS puro. Signals, componentes, Virtual DOM y Router en 6.9 KB sin dependencias.",
+  "url":"https://braiidev.github.io/nano/",
+  "applicationCategory":"DeveloperApplication","operatingSystem":"Web Browser",
+  "programmingLanguage":"JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "softwareVersion":"1.0.0","license":"https://opensource.org/licenses/MIT"}
+  </script>
+
+  <!-- ── Favicon inline SVG (0 requests extra) ────── -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23080b08'/><text y='72' x='12' font-size='68' font-family='monospace' font-weight='bold' fill='%2339ff6e'>n </text></svg>">
+
+  <!--
+    ══════════════════════════════════════════════════
+    PERFORMANCE — CORE WEB VITALS
+    ══════════════════════════════════════════════════
+
+    PROBLEMA: Google Fonts agrega 2-3 requests bloqueantes
+    que disparan el LCP (Largest Contentful Paint) en ~400ms.
+
+    SOLUCIÓN: font stack local que usa las fuentes del sistema.
+    En macOS/iOS → SF Mono / Menlo (idéntico en calidad)
+    En Windows   → Cascadia Code / Consolas
+    En Linux     → DejaVu Sans Mono / Liberation Mono
+    Fallback      → monospace genérico del browser
+    Resultado:    0 requests externos, 0ms de bloqueo.
+    ══════════════════════════════════════════════════
+  -->
+
+  <!-- <base href="/nano" esto es solo para cuando esta dentro de una subcarpeta> -->
   <link rel="stylesheet" href="app/styles.css">
+
+  <!--
+    PRELOAD del script principal y del CSS:
+    Le dice al browser que los descargue con máxima prioridad
+    mientras parsea el HTML, antes de ejecutar nada.
+    Mejora el FCP (First Contentful Paint) en ~100-200ms.
+  -->
+  <link rel="preload" href="app/styles.css"        as="style">
+  <link rel="preload" href="packages/nano.min.js"  as="script" crossorigin>
+  <link rel="preload" href="app/main.js"           as="script" crossorigin>
+
+  <!--
+    MODULE PRELOAD de todos los módulos de la app:
+    El browser descarga el grafo de módulos en paralelo
+    en vez de descubrirlos uno a uno al ejecutar.
+    Elimina la "cascada de imports" que es el mayor
+    problema de rendimiento de ES Modules en producción.
+  -->
+  <link rel="modulepreload" href="packages/nano.min.js">
+  <link rel="modulepreload" href="app/main.js">
+  <link rel="modulepreload" href="app/seo.js">
+  <link rel="modulepreload" href="app/components/NavBar.js">
+  <link rel="modulepreload" href="app/pages/HomePage.js">
+  <link rel="modulepreload" href="app/pages/CounterPage.js">
+  <link rel="modulepreload" href="app/pages/SignalsPage.js">
+  <link rel="modulepreload" href="app/pages/TodoPage.js">
+  <link rel="modulepreload" href="app/pages/AboutPage.js">
 </head>
 <body>
-  <nav id="nav"></nav>
+  <!-- Contenido estático para crawlers sin JS -->
+  <noscript>
+    <div style="font-family:monospace;padding:40px;background:#080b08;color:#c8e6c8;min-height:100vh">
+      <h1 style="color:#39ff6e;font-size:48px;margin-bottom:12px">nano</h1>
+      <p style="margin-bottom:8px">Micro-framework reactivo en Vanilla JS puro.</p>
+      <ul style="color:#4a664a;line-height:2;padding-left:20px">
+        <li>Signals reactivos — estado atómico sin dependencias</li>
+        <li>Componentes con tagged template literals</li>
+        <li>Virtual DOM con diffing O(n)</li>
+        <li>Router client-side con basePath automático</li>
+        <li>Ciclo de vida con MutationObserver nativo</li>
+        <li>6.9 KB · 0 dependencias · 0 pasos de build</li>
+      </ul>
+      <p style="margin-top:16px;color:#4a664a">Habilitá JavaScript para ver los demos interactivos.</p>
+    </div>
+  </noscript>
+
+  <div id="nav"></div>
   <main id="root"></main>
   <script type="module" src="app/main.js"></script>
 </body>
