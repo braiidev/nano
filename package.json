@@ -1,0 +1,15 @@
+{
+  "name": "nano",
+  "version": "0.1.0",
+  "description": "Un micro-framework reactivo en Vanilla JS puro",
+  "type": "module",
+  "scripts": {
+    "dev":   "npx serve .",
+    "lint":  "eslint .",
+    "check": "npx tsc --noEmit"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint":     "^9.0.0"
+  }
+}
