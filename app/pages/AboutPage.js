@@ -90,7 +90,7 @@ export const AboutPage = defineComponent('AboutPage', () => {
   Router, navigate,
   onMount, onEvent,
   storage
-} <span class="t-kw">from</span> <span class="t-str">'https://raw.githubusercontent.com/braiidev/nano/refs/heads/main/packages/nano.min.js'</span>;
+} <span class="t-kw">from</span> <span class="t-str">'https://braiidev.github.io/nano/packages/nano.min.js'</span>;
 
 <span class="t-cmt">// ── Estado ─────────────────────────────────────────</span>
 <span class="t-kw">const</span> appStore = <span class="t-fn">createStore</span>({ tema: <span class="t-str">'dark'</span>, usuario: <span class="t-kw">null</span> });

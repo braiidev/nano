@@ -39,7 +39,7 @@ function CodeBlock({ filename, code }) {
 export const HomePage = defineComponent('HomePage', () => {
   const installCode = `<span class="t-cmt">// CDN — un solo import, sin npm, sin build</span>
 <span class="t-kw">import</span> { html, signal, defineComponent, Router }
-  <span class="t-kw">from</span> <span class="t-str">'https://raw.githubusercontent.com/braiidev/nano/refs/heads/main/packages/nano.min.js'</span>;
+  <span class="t-kw">from</span> <span class="t-str">'https://braiidev.github.io/nano/packages/nano.min.js'</span>;
 
 <span class="t-cmt">// O ruta relativa dentro del mismo repo</span>
 <span class="t-kw">import</span> { html, signal } <span class="t-kw">from</span> <span class="t-str">'../../packages/nano.min.js'</span>;`;

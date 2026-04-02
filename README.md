@@ -6,7 +6,7 @@ Micro-framework reactivo en Vanilla JS puro. Sin dependencias. Sin build step.
 
 ### Remoto
 ```js
-import { html, defineComponent, mount } from 'https://raw.githubusercontent.com/braiidev/nano/refs/heads/main/packages/nano.min.js';
+import { html, defineComponent, mount } from 'https://braiidev.github.io/nano/packages/nano.min.js';
 ```
 
 ### Git clone

@@ -41,22 +41,6 @@
   <!-- ── Favicon inline SVG (0 requests extra) ────── -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23080b08'/><text y='72' x='12' font-size='68' font-family='monospace' font-weight='bold' fill='%2339ff6e'>n </text></svg>">
 
-  <!--
-    ══════════════════════════════════════════════════
-    PERFORMANCE — CORE WEB VITALS
-    ══════════════════════════════════════════════════
-
-    PROBLEMA: Google Fonts agrega 2-3 requests bloqueantes
-    que disparan el LCP (Largest Contentful Paint) en ~400ms.
-
-    SOLUCIÓN: font stack local que usa las fuentes del sistema.
-    En macOS/iOS → SF Mono / Menlo (idéntico en calidad)
-    En Windows   → Cascadia Code / Consolas
-    En Linux     → DejaVu Sans Mono / Liberation Mono
-    Fallback      → monospace genérico del browser
-    Resultado:    0 requests externos, 0ms de bloqueo.
-    ══════════════════════════════════════════════════
-  -->
 
   <!-- <base href="/nano" esto es solo para cuando esta dentro de una subcarpeta> -->
   <link rel="stylesheet" href="app/styles.css">

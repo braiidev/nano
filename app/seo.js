@@ -5,7 +5,7 @@
 // cada página con sus propios metadatos.
 // ─────────────────────────────────────────────
 
-const BASE_URL = 'https://tu-usuario.github.io/tu-repo/nano-site';
+const BASE_URL = 'https://braiidev.github.io/nano';
 
 /** @type {Record<string, { title: string, description: string }>} */
 const META = {
