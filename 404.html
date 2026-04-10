@@ -5,7 +5,7 @@
     <script>
       // Redirige manteniendo la ruta
       const path = window.location.pathname;
-      const index = "/";
+      const index = window.location.origin;
 
       window.location.replace(index + "/?redirect=" + path);
     </script>
